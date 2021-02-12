@@ -20,7 +20,7 @@ public class CouponContorller {
 	@Autowired
 	CouponService couponService;
 	
-	@RequestMapping(value = "/create", method = RequestMethod.POST) 
+	@RequestMapping(value = "/create", method = RequestMethod.POST, produces = "application/json") 
 	public ResponseEntity<CouponResponse> addCoupon(@RequestBody Coupon coupon) {
 		
 		CouponResponse response = new CouponResponse();
@@ -40,7 +40,7 @@ public class CouponContorller {
 		
 	}
 	
-	@RequestMapping(value ="/redeem", method = RequestMethod.GET)
+	@RequestMapping(value ="/redeem", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<CouponResponse> redeemCoupon(@RequestBody CouponRequest request) {
 		
 		CouponResponse response = new CouponResponse();
